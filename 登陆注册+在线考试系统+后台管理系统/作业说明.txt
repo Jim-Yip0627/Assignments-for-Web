@@ -1,0 +1,4 @@
+1 导入exam.sql
+2 在signup.html和login.html完成注册和登陆
+3 在exam.php完成考试
+4 自动跳转到score_manage.php查看成绩排名，平均分，及删除成绩

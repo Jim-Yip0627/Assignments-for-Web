@@ -1,0 +1,191 @@
+body{
+	font-family:Tahoma,"Microsoft YaHei",Helvetica,Arial,sans-serif;
+	background-color:#f5f7f8;
+	overflow: scroll;
+}
+.boxer{
+	margin-top:30px;
+	margin-bottom:30px;
+	background-color:#ffffff;
+	width:80%;
+	height:auto;
+
+}
+.test_title{
+	height:100px;
+	border-bottom:1px solid #ccc;
+}
+.title_li{
+	height:60px;
+	line-height:80px;
+	text-align:center;
+	color:#3498DB;
+	font-size:24px;
+	font-weight:bold;
+
+}
+.title_ct{
+	height:40px;
+	color:#999;
+	line-height: 40px;
+	font-size:14px;
+	text-align: center;
+}
+
+.test_li{
+	margin-bottom: 10%;
+}
+.test_ct{
+	border-right:1px solid #ccc;
+	height:auto;
+	color:#666;
+	font-size:16px;
+}
+.clock{
+	margin-top:10px;
+	height:50px;
+	background-color:#ebf4ff;
+	margin-bottom:10px;
+	line-height:50px;
+	color:#666;
+}
+.info{
+	margin-top:10px;
+	height:50px;
+	background-color:#ebf4ff;
+	margin-bottom:10px;
+	line-height:50px;
+	color:#666;
+}
+.jd_title{
+	height:50px;
+	background-color:#ebf4ff;
+	margin-top:10px;
+	margin-bottom:10px;
+	line-height:50px;
+	color:#666;
+	font-size:16px;
+	font-weight:bold;
+	text-align: center;
+}
+.jd{
+	border-top:1px solid #ccc;
+	height:400px;
+	color:#666;		
+}
+.fenjie{
+	border-bottom:1px solid #ccc;	
+}
+.title{
+	font-weight:bold;
+	margin-top:10px;
+	height:50px;
+	line-height:50px;
+	background-color:#ebf4ff;
+	margin-bottom:10px;
+	padding-left:20px;
+}
+.test{
+	border-bottom: 1px dashed #ccc;
+	height:auto;
+	padding-bottom: 20px;
+	padding-left:20px;
+	letter-spacing:1px;
+	font-size:14px;
+}
+.test_last{
+	height:auto;
+	padding-left:20px;
+	letter-spacing:1px;
+	font-size:14px;
+}
+.control_label{
+	font-weight:bold;
+}
+.controls{
+	margin-left:45px;
+	font-weight:normal!important;
+}
+.countdown{
+	font-size:16px;
+	font-weight:bold;
+
+}
+.p{
+	font-size:16px;
+	margin-top:20px;
+}
+.p_n{
+	float:right;
+	color:red;
+	display:none;	
+}
+.jdk{
+	line-height:30px;
+	border: 1px solid #3498db;
+	display: inline-block;
+    width:30px;
+    height:30px;
+    text-align: center;
+    margin-right:15px;
+    margin-top:15px;
+    cursor: pointer;
+    background-color:#fff;
+    padding:0 0;
+    color:#3498db;
+}
+.active{
+	background-color:#3498db;
+	color:#fff;
+}
+.yours{
+	color:#3498db;
+	padding-right:25px;
+	padding-left:25px;
+	padding-top:10px;
+	padding-bottom:5px;
+}
+.right{
+	color:#3498db;
+	padding-right:25px;
+	padding-left:25px;
+	padding-bottom:10px;
+	padding-top:5px;
+}
+.manfen{
+	float:right; color:red;
+}
+.defen{
+	float:right; color:red;
+}
+.fenshu{
+	background-color:#ebebeb;
+	display: none;
+}
+.bs1{
+	background-color:#3498db;
+	border:1px solid #3498db;
+}
+.bs2{
+	background-color:#ff6700;
+	border:1px solid #ff6700;
+}
+.bs3{
+
+	background-color:#a0a0a0;
+	border:1px solid #a0a0a0;
+}
+.bs{
+	margin-left:5px;
+}
+.biaoshi{
+	margin-top:30px;
+	clear:both;
+}
+.btn{
+	margin-top:20px;
+	width:140px;
+}
+.scoreTotal{
+	display:none;
+}

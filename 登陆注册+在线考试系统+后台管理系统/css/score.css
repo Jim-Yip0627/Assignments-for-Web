@@ -1,0 +1,144 @@
+body {
+    background-color: #fbfbfb!important;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.boxer {
+    width: 750px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 20px #333;
+}
+
+.user_in {
+    width: 387px;
+    height: 42px;
+    border-radius: 8px;
+    border: 2px solid #666;
+    padding-left: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    line-height: 42px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.table_hd {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+}
+
+.score {
+    margin-top: 40px;
+}
+
+.jumbotron {
+    background-image: url(../img/2.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 280px;
+    margin-bottom: 0;
+}
+
+.basic_info {
+    margin-right: 10px;
+    color: #34495E;
+    font-size: 16px;
+    display:block;
+    float:left;
+    width:170px;
+}
+
+.record {
+    color: #3498DB;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 30px;
+    display:block;
+    float:left;
+    width:80px;
+}
+
+.info {
+    color: #7F8C8D;
+    font-size: 16px;
+    margin-right: 30px;
+}
+
+.cancle {
+    float: right;
+    margin-top: 0;
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px!important;
+    margin-left: 10px;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+.ensure {
+    float: right;
+    margin-top: 0;
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px!important;
+    margin-left: 10px;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+.more_info {
+    float: right;
+    margin-top: 0;
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px!important;
+    margin-left: 10px;
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+.fenjie_block {
+    font-size: 18px!important;
+    font-weight: bold!important;
+    color: #1ABC9C;
+    padding-bottom: 10px;
+}
+
+.pagination li.active>a {
+    background-color: #3498DB!important;
+}
+
+.pagination li>a:hover {
+    background-color: #3498DB!important;
+}
+
+.score_tt {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #3498DB;
+    margin-top: 30px;
+}
+
+.has-success .form-control {
+    color: #3498DB!important;
+    border-color: #3498DB!important;
+}
+.averecord{
+	font-size:24px;
+	font-weight:bold;
+	color:#3498DB;
+	margin-left:20px;
+}

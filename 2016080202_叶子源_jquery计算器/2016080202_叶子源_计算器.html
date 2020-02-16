@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>叶子源很帅！</title>
+</head>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: bold 14px Arial, sans-serif;
+}
+html {
+	height: 100%;
+	background: white;
+	background: radial-gradient(circle, #fff 20%, #9ef4ff);
+	background-size: cover;
+}
+#box {
+	width: 325px;
+	height: 290px;
+	margin: 100px auto;
+	padding: 20px 20px 9px;
+	position:relative;
+	background: #a0ea9d;
+	background: linear-gradient(#a0ea9d, #8bfd87);
+	border-radius: 3px;
+	box-shadow: 0px 4px #06a300, 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+#re {
+	height: 40px;
+	width: 212px;
+	float: right;	
+	padding: 0 10px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+	font-size: 17px;
+	line-height: 40px;
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	text-align: right;
+	letter-spacing: 1px;
+}
+#calcu{
+	width:300px;
+	height:290px;
+	position:absolute;
+}
+#calcu ul li{
+	list-style:none;
+	float:left;
+}
+.btn {
+	float: left;
+	position: relative;
+	top: 0;
+	cursor: pointer;
+	width: 66px;
+	height: 36px;
+	background: white;
+	border-radius: 18px;
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	margin: 0 7px 11px 0;
+	color: #888;
+	line-height: 36px;
+	text-align: center;
+	user-select: none;
+	transition: all 0.2s ease;
+	border:none;
+	outline:none;
+}
+.btn:hover {
+	background: #9c89f6;
+	box-shadow: 0px 4px #6b54d3;
+	color: white;
+}
+.btn:active {
+	box-shadow: 0px 0px #6b54d3;
+	top: 4px;
+}
+#jia ,#jian ,#cheng ,#chu{
+	background: #FFF0F5;
+}
+#jia:hover ,#jian:hover ,#cheng:hover ,#chu:hover{
+	background: #9c89f6;
+}
+#reset {
+	background: #ff9fa8;
+	box-shadow: 0px 4px #ff7c87;
+	color: white;
+}
+#reset:hover{
+	background: #f68991;
+	box-shadow: 0px 4px #d3545d;
+	color: white;	
+}
+#reset:active{
+	top: 4px;
+	box-shadow: 0px 0px #d3545d;
+}
+#dengyu{
+	background: #f1ff92;
+	box-shadow: 0px 4px #9da853;
+	color: #888e5f;
+}
+#dengyu:hover{
+	background: #abb850;
+	box-shadow: 0px 4px #717a33;
+	color: #ffffff;
+}
+#dengyu:active{
+	box-shadow: 0px 0px #717a33;
+	top: 4px;
+}
+</style>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+	var lamda = "";
+	var lamdaClear = "";
+	//对运算符添加鼠标单击事件;
+	$(".btn").mousedown(function(){	
+		if($(this).val()=="重置"){
+			lamda = "";
+			lamdaClear = "";
+			$("#re").html(lamdaClear);
+			return;
+		}else if($(this).val()!="="){
+			if(($(this).val()!="+")&&($(this).val()!="-")&&($(this).val()!="*")&&($(this).val()!="/")){
+				lamda = lamda+$(this).val();
+				//显示在屏幕上的式子;
+				lamdaClear = lamdaClear+$(this).val();	
+				$("#re").html(lamdaClear);
+			}else{
+				//前后插入一个()；
+				lamda = "("+lamda+")";
+				lamda = lamda+$(this).val();
+				//显示在屏幕上的式子;
+				lamdaClear = lamda.replace(/\(/g,"");
+				lamdaClear = lamdaClear.replace(/\)/g,"");
+				$("#re").html(lamdaClear);
+			}
+		}else{
+			lamda = eval(lamda);
+			$("#re").html(lamda);
+		}
+	})
+})
+</script>
+<body>
+<div id="box">
+	<div id="re">
+    </div>
+    <div id="calcu">
+    	<ul>
+            <li><input type="button" class="btn" id="reset" value="重置"/></li>
+            <div style="clear:both;"></div>
+            <br/> 
+            <li><input type="button" class="btn" value="7"/></li>  
+            <li><input type="button" class="btn" value="8"/></li>  
+            <li><input type="button" class="btn" value="9"/></li>  
+            <li><input type="button" class="btn" id="chu" value="/"/></li>  
+            <li><input type="button" class="btn" value="4"/></li>  
+            <li><input type="button" class="btn" value="5"/></li>  
+            <li><input type="button" class="btn" value="6"/></li>  
+            <li><input type="button" class="btn" id="cheng" value="*"/></li>  
+            <li><input type="button" class="btn" value="1"/></li>  
+            <li><input type="button" class="btn" value="2"/></li>  
+            <li><input type="button" class="btn" value="3"/></li>  
+            <li><input type="button" class="btn" id="jian" value="-"/></li>  
+            <li><input type="button" class="btn" id="jia" value="+"/></li>  
+            <li><input type="button" class="btn" value="0"/></li>  
+            <li><input type="button" class="btn" value="."/></li>  
+            <li><input type="button" class="btn" id="dengyu" value="="/></li>          
+        </ul>
+    </div>
+</div>
+</body>
+</html>

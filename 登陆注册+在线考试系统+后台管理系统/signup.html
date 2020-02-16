@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>
+            网页设计课程测验
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/login.css"/>
+        <link href="css/flat-ui.css" rel="stylesheet"/>
+        <script>
+    function checkvalue(form)
+    {
+        if(form.n.value=='')
+        {
+            alert('请输入姓名');
+            return false;
+        }
+        if(form.si.value=='')
+        {
+            alert('请输入学号');
+            return false;
+        }    
+        if(form.ps.value=='')
+        {
+            alert('请输入密码');
+            return false;
+        }
+    }
+</script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="boxer">
+                <form action="doreg.php" method="post" onSubmit="return checkvalue(this)">
+                    <div class="table_hd">
+                    	考试系统注册
+                    </div>
+                    <div class="table_bd">
+                        <input type="edit" name="n" placeholder="请输入姓名" class="user_in"/>
+                        <input type="edit" name="si" placeholder="请输入学号" class="user_in"/>
+                        <input type="password" name="ps" placeholder="请输入密码" class="user_in"/></br>
+                        <button type="submit" class="btn btn-lg btn-info but">注册</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
