@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+#fk{
+	width:1200px;
+	height:535px;
+	border:5px solid blue;
+	margin:0 auto;
+	position:relative;
+}
+#fk img{
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#fk ul{
+	position:absolute;
+	left:548px;
+	bottom:23px;
+}
+#fk ul li{
+	list-style:none;
+	width:12px;
+	height:12px;
+	background:#000;
+	float:left;
+	margin-right:8px;
+	border-radius:6px;
+}
+</style>
+
+<script>
+window.onload = function(){
+//注意：多个方式控制同一元素效果的时候，一定要走同一个变量;
+	var c = 0;//大总管变量;
+	var fk = document.getElementById("fk");
+	var imgs = fk.getElementsByTagName("img");
+	var lis = fk.getElementsByTagName("li");
+	
+	//控制图片切换的函数;
+	function run(){
+		c++;
+		if(c==5){
+			c = 0;
+		}
+		//循环：使图片都先隐藏；li都先变为黑色;
+		for(var i=0;i<5;i++){
+			imgs[i].style.display = "none";
+			lis[i].style.background = "#000";
+		}
+		//让c号图片显示，让c号li变红;
+		imgs[c].style.display = "block";
+		lis[c].style.background = "#A10000";
+	}
+	
+	//定时器;
+	var timer = setInterval(run,3000);
+	
+	//循环，给li加事件;
+	for(var i=0;i<lis.length;i++){
+		//给li添加序号属性;
+		lis[i].xuhao = i;
+		//给i号元素加鼠标移入事件;
+		lis[i].onmouseover = function(){
+		    //请让一个变量来控制效果!
+			c = this.xuhao;
+			//停止定时器;
+			clearInterval(timer);
+			//循环：使图片都先隐藏；li都先变为黑色;
+			for(var i=0;i<5;i++){
+				imgs[i].style.display = "none";
+				lis[i].style.background = "#000";
+		    }
+			//让i号图片显示；i号li变红;
+			imgs[c].style.display = "block";
+			lis[c].style.background = "#A10000";
+		}
+		//鼠标移入事件结束;
+		
+		//给li加鼠标移出事件;
+		lis[i].onmouseout = function(){
+			timer = setInterval(run,3000);
+		}
+		//结束移出事件;
+	}
+}
+</script>
+<body>
+	<div id="fk">
+    	<img src="images/1.jpg" style="display:block;"/>
+        <img src="images/2.jpg"/>
+        <img src="images/3.jpg"/>
+        <img src="images/4.jpg"/>
+        <img src="images/5.jpg"/>
+        <ul>
+        	<li style="background:#A10000"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

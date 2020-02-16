@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tab切换效果</title>
+</head>
+<style>
+*{
+	padding:0;
+	margin:0;
+}
+#tab{
+	width:200px;
+	height:440px;
+	float:left;
+	border:1px solid #CCC;
+}
+#tab:hover{
+	border-right:none;
+}
+.content{
+	width:640px;
+	height:440px;
+	float:left;
+	display:none;
+	border:1px solid #CCC;
+	border-left:none;
+	-moz-box-shadow: -1px 1px 3px #888888; /* 老的 Firefox */
+	box-shadow: -1px 1px 3px #888888;
+}
+.choice:hover{
+	cursor:pointer;
+	-moz-box-shadow: -2px 2px 5px #888888; /* 老的 Firefox */
+	box-shadow: -2px 2px 5px #888888;
+}
+.choice p{
+	color:#000;
+	font-size:15px;
+	font-weight:bold;
+	margin-left:10px;
+	margin-top:5px;
+	margin-bottom:8px;
+}
+.choice p span{
+	color:#999;
+	font-size:24px;
+}
+.choice ul{
+	color:#666;
+	font-size:11px;
+	list-style:none;
+}
+.choice ul li{
+	margin-left:5px;
+	float:left;
+	margin-bottom:4px;
+}
+.choice ul li:hover{
+	cursor:pointer;
+	color:#c00;
+	text-decoration:underline;
+}
+.content p{
+	margin-top:15px;
+	margin-left:20px;
+	color:#cc3366;
+	font-weight:bold;
+}
+.content ul{
+	list-style:none;	
+	color:#666;
+	font-size:12px;
+}
+.content ul li{
+	margin-left:10px;
+	float:left;
+	margin-top:10px;
+}
+.content ul li:hover{
+	cursor:pointer;
+	color:#c00;
+	text-decoration:underline;
+}
+</style>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+	var timer;
+	$(".choice").mouseenter(function(){
+		clearTimeout(timer);
+		var c = $(this).index();
+		$(".content").eq(c).css({"display":"block"}).siblings(".content").css({"display":"none"});
+	})
+	
+	$(".choice").mouseleave(function(){
+		timer = setTimeout(function(){
+			$(".content").css({"display":"none"});
+		},200);
+	})
+	
+	$(".content").mouseenter(function(){
+		clearTimeout(timer);
+	})
+	
+	$(".content").mouseleave(function(){
+		$(".content").css({"display":"none"});
+	})
+})
+</script>
+<body>
+	<div id="tab">
+        <div class="choice" style="width:200px;height:88px;">
+        	<p>潮流女包/真皮女包<span>  &nbsp;&nbsp; &nbsp; &nbsp;&rsaquo;</span></p>
+            <ul>
+            	<li style="margin-left:10px;">手提包</li>
+                <li>单肩包</li>
+                <li>斜挎包</li>
+                <li>钱包手包</li>
+                <li style="clear:both"></li>
+                <li style="margin-left:5px;">真皮包</li>
+                <li>双肩包</li>
+                <li>结婚季</li>
+            </ul>
+            <hr style="margin:10px;margin-top:50px;border:1px dotted #999999;width:155px;">
+        </div>
+        <div class="choice" style="width:200px;height:88px;">
+        	<p>绅士男包<span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&rsaquo;</span></p>
+            <ul>
+            	<li style="margin-left:10px;">真皮包</li>
+                <li>单肩包</li>
+                <li>双肩包</li>
+                <li>手提包</li>
+                <li style="clear:both"></li>
+                <li style="margin-left:5px;">斜跨包</li>
+                <li>钱包/手包</li>
+                <li>胸包</li>
+            </ul>
+            <hr style="margin:10px;margin-top:50px;border:1px dotted #999999;width:155px;">
+        </div>
+        <div class="choice" style="width:200px;height:88px;">
+        	<p>运动/旅行<span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&rsaquo;</span></p>
+            <ul>
+            	<li style="margin-left:10px;">双肩包</li>
+                <li>拉箱包</li>
+                <li>户外功能包</li>
+                <li style="clear:both"></li>
+                <li style="margin-left:5px;">休闲包</li>
+            </ul>
+            <hr style="margin:10px;margin-top:50px;border:1px dotted #999999;width:155px;">
+        </div>
+        <div id="others" style="width:200px;height:66px;">
+        </div>
+        <div style="width:200px;height:105px;">
+        </div>
+    </div>
+    <div class="content" style="display:block;">
+    	<div>
+        	<p style="margin-top:20px;margin-left:20px;color:#cc3366;font-weight:bold;">&#124;品牌</p>
+            <img src="images/15.jpg"/ style="margin-top:10px;margin-left:20px;border:1px dotted #CCCCCC;">
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;热门推荐：</p>
+                <ul>
+                	<li style="margin-left:20px;">贝壳包</li>
+                    <li >小方包</li>
+                    <li >链条包</li>
+                    <li >水桶包</li>
+                    <li >托特包</li>
+                    <li >小猪包</li>
+                    <li style="clear:both"></li>
+                    <li style="margin-left:10px;">格纹包</li>
+                    <li >菱格包</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            	<p>&#124;按价格：</p>
+                 <ul >
+                	<li style="margin-left:20px;">199以下</li>
+                    <li >200-299</li>
+                    <li >300-599</li>
+                    <li >600-999</li>
+                    <li >1000以上</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;按主材质：</p>
+                <ul>
+                    <li style="margin-left:20px;">真皮</li>
+                    <li >合成革</li>
+                    <li >二层牛皮</li>
+                    <li >羊皮</li>
+                    <li >尼龙</li>
+                    <li >帆布</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            	<p>&#124;按颜色：</p>
+                 <ul >
+                	<li style="margin-left:20px;">黑色</li>
+                    <li >粉红</li>
+                    <li >杏色</li>
+                    <li >蓝色</li>
+                    <li >白色</li>
+                    <li >红色</li>
+                    <li >橘色</li>
+                </ul>
+            </div>
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;按尺码：</p>
+                <ul>
+                    <li style="margin-left:20px;">迷你包（可放手机）</li>
+                    <li >小包（可放iPad mini）</li>
+                    <li style="clear:both;"></li>
+                    <li >中包（可放iPad）</li>
+                    <li >大包（可放A4纸）</li>
+                    <li >超大容量</li>
+                </ul>
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            </div>
+        </div>
+    </div>
+<!--          -------------          -->
+    <div class="content">
+    	<div style="">
+        	<p style="margin-top:20px;margin-left:20px;color:#cc3366;font-weight:bold;">&#124;品牌</p>
+            <img src="images/16.jpg"/ style="margin-top:10px;margin-left:20px;border:1px dotted #CCCCCC;">
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;热门产品：</p>
+                <ul>
+                	<li style="margin-left:20px;">公文包</li>
+                    <li >电脑包</li>
+                    <li >休闲包</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            	<p>&#124;按价格：</p>
+                 <ul >
+                	<li style="margin-left:20px;">199以下</li>
+                    <li >200-299</li>
+                    <li >300-599</li>
+                    <li >600-999</li>
+                    <li >1000以上</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;按主材质：</p>
+                <ul>
+                    <li style="margin-left:20px;">真皮</li>
+                    <li >合成革</li>
+                    <li >二层牛皮</li>
+                    <li >尼龙</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            	<p>&#124;按颜色：</p>
+                 <ul >
+                	<li style="margin-left:20px;">黑色</li>
+                    <li >棕色</li>
+                    <li >蓝色</li>
+                </ul>
+            </div>
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;按尺寸：</p>
+                <ul>
+                    <li style="margin-left:20px;">小包（可放iPad mini）</li>
+                    <li >中包（可放iPad）</li>
+                    <li style="clear:both;"></li>
+                    <li >大包（可放A4纸）</li>
+                </ul>
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            </div>
+        </div>
+    </div>
+<!--          -------------          -->
+    <div class="content">
+    	<div style="">
+        	<p style="margin-top:20px;margin-left:20px;color:#cc3366;font-weight:bold;">&#124;品牌</p>
+            <img src="images/17.jpg"/ style="margin-top:10px;margin-left:20px;border:1px dotted #CCCCCC;">
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;热门产品：</p>
+                <ul>
+                	<li style="margin-left:20px;">登山包</li>
+                    <li >旅行包</li>
+                    <li >拉杆硬箱</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            	<p>&#124;按价格：</p>
+                 <ul >
+                	<li style="margin-left:20px;">199以下</li>
+                    <li >200-299</li>
+                    <li >300-599</li>
+                    <li >600-999</li>
+                    <li >1000以上</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;按主材质：</p>
+                <ul>
+                    <li style="margin-left:20px;">合成革</li>
+                    <li >尼龙</li>
+                    <li >帆布</li>
+                    <li >二层牛皮</li>
+                    <li >真皮</li>
+                    <li >ABS/PC</li>
+                </ul>
+                <hr style="margin:20px;margin-top:70px;border:1px dotted #999999;width:280px;">
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            	<p>&#124;按颜色：</p>
+                 <ul >
+                	<li style="margin-left:20px;">黑色</li>
+                    <li >棕色</li>
+                    <li >蓝色</li>
+                </ul>
+            </div>
+        </div>
+        <div style="">
+        	<div style="width:320px;height:100px;float:left;">
+            	<p>&#124;按尺寸：</p>
+                <ul>
+                    <li style="margin-left:20px;">小箱子（16寸）</li>
+                    <li >中箱（24寸）</li>
+                    <li >大箱（30寸）</li>
+                </ul>
+            </div>
+        	<div style="width:315px;height:100px;float:left;">
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

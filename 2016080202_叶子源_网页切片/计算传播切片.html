@@ -1,0 +1,199 @@
+<html>
+<head>
+<title>计算传播切片</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+	$("#name").click(function(){
+		$("#name").css({"color":"#000"}).attr({value:""});
+	})
+	$("#name").blur(function(){
+		if($("#name").val()==""){
+			$("#name").css({"color":"#CCC"}).attr({value:"在此输入您的账号"});
+		}else{
+			$("#name").css({"color":"#000"});	
+		}
+	})
+	
+	$("#psw").click(function(){
+		$("#psw").css({"color":"#000"}).attr({value:"",type:"password"});
+	})
+	$("#psw").blur(function(){
+		if($("#psw").val()==""){	
+			$("#psw").css({"color":"#CCC"}).attr({value:"在此输入您的密码",type:"edit"});
+		}else{
+			$("#psw").css({"color":"#000"}).attr({value:"",type:"password"});
+		}
+	})
+	
+	$("#btn").click(function(){
+		if($("#name").val()=="在此输入您的账号" || $("#name").val()==""){
+			$("#tips").text("账号名不能为空！");
+			return false;
+		}
+		if($("#psw").val()=="在此输入您的密码"  || $("#psw").val()==""){
+			$("#tips").text("密码不能为空！");
+			return false;
+		}
+	})
+})
+</script>
+<style>
+#name{
+	width:229px;
+	height:37px;
+	background:url(images/%E8%AE%A1%E7%AE%97%E4%BC%A0%E6%92%AD%E5%88%87%E7%89%87_09.jpg);
+	outline:none;
+	-webkit-appearance:none;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+	font-family:"宋体";
+	color:#CCC;
+}
+#psw{
+	width:229px;
+	height:36px;
+	background:url(images/%E8%AE%A1%E7%AE%97%E4%BC%A0%E6%92%AD%E5%88%87%E7%89%87_17.jpg);
+	outline:none;
+	-webkit-appearance:none;
+	border:none;
+	font-size:18px;
+	font-weight:bold;
+	font-family:"宋体";
+	color:#CCC;
+}
+#btn{
+	width:229px;
+	height:38px;
+	background:url(images/%E8%AE%A1%E7%AE%97%E4%BC%A0%E6%92%AD%E5%88%87%E7%89%87_25.jpg);
+	outline:none;
+	-webkit-appearance:none;
+	border:none;
+	border:none;
+	cursor:pointer;
+}
+#tips{
+	width:229px;
+	height:47px;
+	background:url(images/%E8%AE%A1%E7%AE%97%E4%BC%A0%E6%92%AD%E5%88%87%E7%89%87_21.jpg);
+	font-size:14px;
+	color:#930;
+	font-family:"黑体";
+	line-height:47px;
+}
+#menu{
+	width:598px;
+	height:127px;
+	position:relative;
+}
+#menu ul{
+	position:absolute;
+}
+#menu ul li{
+	list-style:none;
+	font-size:24px;
+	font-family:"微软雅黑";
+	float:left;
+	margin:20px;
+	line-height:55px;
+}
+#menu ul li:hover{
+	color:#c00;
+	text-decoration:underline;
+	cursor:pointer;
+}
+</style>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- Save for Web Slices (计算传播切片.psd) -->
+<table id="__01" width="1280" height="615" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_01.jpg" width="682" height="127" alt=""></td>
+		<td colspan="3">
+			<div id="menu">
+            	<ul>
+                	<li>关于</li>
+                    <li>文章</li>
+                    <li>作者</li>
+                    <li>中心</li>
+                    <li>百科</li>
+                </ul>
+            </div></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_03.jpg" width="682" height="133" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_04.jpg" width="87" height="133" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_05.jpg" width="229" height="133" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_06.jpg" width="282" height="133" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_07.jpg" width="682" height="37" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_08.jpg" width="87" height="37" alt=""></td>
+		<td>
+			<input type="edit" id="name" value="在此输入您的账号"/></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_10.jpg" width="282" height="37" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_11.jpg" width="682" height="22" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_12.jpg" width="87" height="22" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_13.jpg" width="229" height="22" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_14.jpg" width="282" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_15.jpg" width="682" height="36" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_16.jpg" width="87" height="36" alt=""></td>
+		<td>
+			<input type="edit" id="psw" value="在此输入您的密码"/></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_18.jpg" width="282" height="36" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_19.jpg" width="682" height="47" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_20.jpg" width="87" height="47" alt=""></td>
+		<td>
+			<div id="tips"></div></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_22.jpg" width="282" height="47" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_23.jpg" width="682" height="38" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_24.jpg" width="87" height="38" alt=""></td>
+		<td>
+			<input type="button" id="btn"  value=""/></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_26.jpg" width="282" height="38" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_27.jpg" width="682" height="175" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_28.jpg" width="87" height="175" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_29.jpg" width="229" height="175" alt=""></td>
+		<td>
+			<img src="images/&#x8ba1;&#x7b97;&#x4f20;&#x64ad;&#x5207;&#x7247;_30.jpg" width="282" height="175" alt=""></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</body>
+</html>

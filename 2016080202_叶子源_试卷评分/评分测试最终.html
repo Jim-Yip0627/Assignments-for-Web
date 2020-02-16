@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <style>
+  body
+{
+	background-image:url(bg1.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position: center top;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;   
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+
+
+
+.button3 {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button3 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button3 span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button3:hover span {
+  padding-right: 25px;
+}
+
+.button3:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+</style>
+  <title>Document</title>
+  <script src="file:///C|/Users/yzy/Desktop/网页设计/demo/js/jquery.min.js"></script>
+ <script>
+	var second=2430;
+	function dtime()
+	{
+		setInterval(time,1000);
+	}
+	function time()
+	{
+		
+		second=second-1;
+		//alert(second);a
+		var minute;
+		minute=parseInt(second/60);
+		msecond=second%60;
+		document.getElementById("showtime").innerHTML="<p style='font-size:30px;'>距离考试结束还剩下<br/>"+minute+"分"+msecond+"秒"+"</p>";
+		if(second<=0)
+		{
+			var donebtn = document.getElementById('done');
+			donebtn.click();
+			alert("考试时间到，已自动交卷！");
+			
+		}
+		
+    }
+	
+
+	var rule = ['A','E','K','N','T','U','Y','CC','JJ','KK'];//答案
+    var boxs = document.getElementsByTagName('input');
+    var check = [];
+    var score = 0;
+	var s;
+	function calc()
+	{   
+	    check=[];
+        score = 0;
+        for(var i=0;i<boxs.length;i++){
+            if(boxs[i].checked){
+                check.push(boxs[i].value);
+            }
+        }
+ 
+        for(var j=0;j<check.length;j++){
+            if(rule.indexOf(check[j]) !=-1){
+                score++;
+            }
+        }
+        s=Math.ceil(100/rule.length*score);
+		//算分规则 
+		if (s<0)
+       {
+              s=0;
+       }
+       else
+       {
+              s=s;
+       }
+       //判断正负 
+		var showscore=document.getElementById("showscore");
+		showscore.innerHTML="<p>你的分数是：</p><p style='font-size:60px;'>"+s+"</p>";
+		//button事件
+		document.getElementById("Button1").disabled = true;
+        document.getElementById("Button2").click();
+		
+	}
+ </script>
+ </head>
+ <body onload="dtime();">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+	<div   style="border:4px solid red;width:500px;heigth:50px;margin:0 auto;">
+		<h1 style="text-align:center;">《网络内容编辑》期末考试试卷</h1>
+    </div>
+    <div style="width:250px;height:250px;position:relative;left:300px;top:10px">
+     <canvas id="clock" width="250" height="250">
+你的浏览器不支持canvas标签，无法看到时钟。
+</canvas>
+<script type="text/javascript">
+var clock=document.getElementById("clock");
+var cxt=clock.getContext('2d');
+function drawclock(){
+//清除画布
+cxt.clearRect(0,0,250,250);
+var now=new Date();
+var sec=now.getSeconds();
+var min=now.getMinutes();
+var hour=now.getHours();
+hour=hour+min/60;
+//将小时转换为12小时
+hour=hour>12?hour-12:hour;
+
+
+//表盘
+cxt.beginPath();
+cxt.lineWidth=10;
+cxt.strokeStyle="green";
+cxt.arc(125,125,100,0,180,false);
+cxt.stroke();
+cxt.closePath();
+
+//刻度
+//时刻度
+for(var i=0;i<12;i++){
+cxt.save();
+cxt.lineWidth=7;
+cxt.strokeStyle="black";
+cxt.translate(125,125);//设置0，0点
+cxt.rotate(i*30*Math.PI/180);
+cxt.beginPath();
+cxt.moveTo(0,-85);
+cxt.lineTo(0,-95);
+cxt.closePath();
+cxt.stroke();
+cxt.restore();
+}
+//分刻度
+for( var i=0;i<60;i++){
+cxt.save();
+cxt.lineWidth=3;
+cxt.strokeStyle="black";
+cxt.translate(125,125);
+cxt.rotate(i*6*Math.PI/180);
+cxt.beginPath();
+cxt.moveTo(0,-90);
+cxt.lineTo(0,-95);
+cxt.closePath();
+cxt.stroke();
+cxt.restore();	
+}
+
+//时针
+//设置时针风格
+cxt.save();
+cxt.lineWidth=7;
+cxt.beginPath();
+cxt.strokeStyle="black";
+cxt.translate(125,125);
+cxt.rotate(hour*30*Math.PI/180);
+cxt.beginPath();
+cxt.moveTo(0,-65);
+cxt.lineTo(0,9);
+cxt.closePath();
+cxt.stroke();
+cxt.restore();
+
+//分针
+cxt.save();
+cxt.lineWidth=5;
+cxt.beginPath();
+cxt.strokeStyle="black";
+cxt.translate(125,125);
+cxt.rotate(min*6*Math.PI/180);
+cxt.beginPath();
+cxt.moveTo(0,-75);
+cxt.lineTo(0,9);
+cxt.closePath();
+cxt.stroke();
+cxt.restore();
+//秒针
+cxt.save();
+cxt.lineWidth=2;
+cxt.beginPath();
+cxt.strokeStyle="red";
+cxt.translate(125,125);
+cxt.rotate(sec*6*Math.PI/180);
+cxt.beginPath();
+cxt.moveTo(0,-81);
+cxt.lineTo(0,9);
+cxt.closePath();
+cxt.stroke();
+//画出时针，分针，秒针交叉点
+cxt.beginPath();
+cxt.fillStyle="gray";
+cxt.strokeStyle="red";
+cxt.arc(0,0,2,0,180,false);
+cxt.fill();
+cxt.closePath();
+cxt.stroke();
+
+cxt.beginPath();
+cxt.fillStyle="gray";
+cxt.strokeStyle="red";
+cxt.arc(0,-70,2,0,180,false);
+cxt.fill();
+cxt.closePath();
+cxt.stroke();
+cxt.restore();
+}
+drawclock();
+//实验setINterval
+setInterval(drawclock,1000);
+</script>
+    </div>
+            <div id="showtime" style="width:200px; height:150px;position:absolute;left:570px;top:165px">
+			      距离考试结束还有：
+	        </div>
+
+
+
+
+
+ 
+        <div style="width:1000px;heigth:400px; margin:0 auto; position:relative;">
+             <div style="border:1px solid #A9A9A9;width:1000px;heigth:400px; margin:0 auto; position:relative;">
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+        1、phpnow的三个套件为：apache、mysql、php解释 器，其中apache的功能是：
+        </legend>
+        <p><input type="radio" value="A" checked="checked"  name="group1" style="width:17px;height:17px"/> (A)网页服务器
+        <p><input type="radio" value="B" name="group1" style="width:17px;height:17px"/>(B)数据库服务器
+        <p><input type="radio" value="C" name="group1" style="width:17px;height:17px"/>(C)应用程序服务
+        <p><input type="radio" value="D" name="group1" style="width:17px;height:17px"/>(D)操作系统
+        </fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		2、在一个框架的属性面板中，不能设置下面哪一项：
+        </legend>
+	    <p><input type="radio" value="E" checked="checked" name="group2" style="width:17px;height:17px"/> (A)源文件
+        <p><input type="radio" value="F" name="group2" style="width:17px;height:17px"/>(B)边框颜色
+        <p><input type="radio" value="G" name="group2" style="width:17px;height:17px"/>(C)边框宽度
+        <p><input type="radio" value="H" name="group2" style="width:17px;height:17px"/>(D)滚动条
+		</fieldset>
+         
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		3、下面对JPEG格式描述不正确的一项是：
+        </legend>
+        <p><input type="radio" value="I" checked="checked" name="group3" style="width:17px;height:17px"/> (A)照片、油画和一些细腻、讲求色彩浓淡的图片常采用JPEG格式 
+        <p><input type="radio" value="J" name="group3" style="width:17px;height:17px"/>(B)JPEG支持很高的压缩率，因此其图像的下载速度非常快
+        <p><input type="radio" value="K"  name="group3" style="width:17px;height:17px"/>(C)最高只能以256色显示的用户可能无法观看JPEG图像	
+        <p><input type="radio" value="L"  name="group3" style="width:17px;height:17px"/>(D)采用JPEG格式对图片进行压缩后，还能再打开图片，然后对它重新修饰、编辑、压缩
+		</fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		4、下面不属于CSS插入形式的是：
+        </legend>
+        <p><input type="radio" value="M" checked="checked" name="group4" style="width:17px;height:17px"/> (A)内联式
+        <p><input type="radio" value="N" name="group4" style="width:17px;height:17px"/>(B)索引式
+        <p><input type="radio" value="O" name="group4" style="width:17px;height:17px"/>(C)嵌入式
+        <p><input type="radio" value="P" name="group4" style="width:17px;height:17px"/>(D)外部式
+		</fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		5、当标记的TYPE属性值为( )时，代表一个可选多项的复选框。
+        </legend>
+        <p><input type="radio" value="Q" checked="checked" name="group5" style="width:17px;height:17px"/> (A)TEXT
+        <p><input type="radio" value="R" name="group5" style="width:17px;height:17px"/>(B)PASSWORD
+        <p><input type="radio" value="S" name="group5" style="width:17px;height:17px"/>(C)RADIO 	
+        <p><input type="radio" value="T" name="group5" style="width:17px;height:17px"/>(D)CHECKBOX
+		</fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		6、在HTML中，单元格的标记是( )
+        </legend>
+        <p><input type="radio" value="U" checked="checked" name="group6" style="width:17px;height:17px"/> (A)&lt;td&gt;
+        <p><input type="radio" value="V" name="group6" style="width:17px;height:17px"/>(B)&lt;span&gt;
+        <p><input type="radio" value="W" name="group6" style="width:17px;height:17px"/>(C)&lt;body&gt; 	
+        <p><input type="radio" value="X" name="group6" style="width:17px;height:17px"/>(D)&lt;tr&gt;
+		</fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		7、web2.0代表性的技术指的是？
+        </legend>
+        <p><input type="radio" value="Y" checked="checked" name="group7" style="width:17px;height:17px"/> (A)ajax
+        <p><input type="radio" value="Z" name="group7" style="width:17px;height:17px"/>(B)jquery
+        <p><input type="radio" value="AA" name="group7" style="width:17px;height:17px"/>(C)bootstrap	
+        <p><input type="radio" value="BB" name="group7" style="width:17px;height:17px"/>(D)node.js
+		</fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		8、在html中，使用外部JS文件的语句为（ ）。
+        </legend>
+        <p><input type="radio" value="CC" checked="checked" name="group8" style="width:17px;height:17px"/> (A)&lt;scriptlanguage="JavaScript" src="文件名.js&gt;>&lt;/script&gt;
+        <p><input type="radio" value="DD" name="group8" style="width:17px;height:17px"/>(B)&lt;scriptlanguage="JavaScript" file="文件名.js&gt;>&lt;/script&gt;
+        <p><input type="radio" value="EE" name="group8" style="width:17px;height:17px"/>(C)&lt;scriptimport="文件名.js&gt;&lt;/script&gt;	
+        <p><input type="radio" value="FF" name="group8" style="width:17px;height:17px"/>(D)&lt;scriptfile="文件名.js&gt;&lt;/script&gt;	
+		</fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+		<legend style="font-size:24px;color:#000">
+		9、在客户端网页脚本语言中最为通用的是( )。
+        </legend>
+        <p><input type="radio" value="GG" checked="checked" name="group9" style="width:17px;height:17px"/> (A)ASP
+        <p><input type="radio" value="HH" name="group9" style="width:17px;height:17px"/>(B)VB
+        <p><input type="radio" value="II" name="group9" style="width:17px;height:17px"/>(C)Perl 	
+        <p><input type="radio" value="JJ" name="group9" style="width:17px;height:17px"/>(D)javascript 
+		</fieldset>
+        
+        <fieldset style="border-color:#F0F0F0">
+        <legend style="font-size:24px;color:#000">
+        10、你承不承认写代码很有趣？
+        </legend>
+        <p><input type="radio" value="KK" checked="checked" name="group10" style="width:17px;height:17px"/> (A)承认 
+        <p><input type="radio" value="LL" name="group10" style="width:17px;height:17px"/>(B)不承认
+		</fieldset>
+               </div>
+        
+		<center>
+		<button id="Button1" class="button" onclick="calc();" id="done">交卷 评分</button>
+        
+		<button  class="button3" onclick="$p=$('#showscore').slideDown() ;">
+			显示
+		</button>
+		<button  class="button3" onclick="$p=$('#showscore').slideUp() ;">
+			隐藏
+		</button>
+        
+
+		</center>
+
+		
+ <div id="showscore" style="width:200px; height:200px;font-size:30px;font-weight:1000">
+			你的分数是：
+		</div>
+	
+ </body>
+</html>

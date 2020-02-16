@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+.tm{
+	width:200px;
+	height:230px;
+	border:1px solid #CCC;
+	float:left;
+	position:relative;
+}
+.pic{
+	position:absolute;
+	left:13px;
+	top:0px;
+}
+.tag{
+	position:absolute;
+	top:168px;
+	left:20px;
+	color:#666;
+	font-size:13px;
+	font-family:"宋体";
+}
+.tag:hover{
+	cursor:pointer;
+	color:#c00;
+	text-decoration:underline;
+}
+.price{
+	position:absolute;
+	top:188px;
+	left:80px;
+	color:#000;
+	font-weight:bold;
+	font-size:14px;
+	font-family:"宋体";
+}
+</style>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+	//给div添加鼠标移入事件;
+	$(".pic").mouseenter(function(){
+			$(this).stop().animate({"left":"6px"},300);
+	})
+	//给div添加鼠标移出事件
+	$(".pic").mouseleave(function(){
+			$(this).stop().animate({"left":"13px"},300);
+	})
+})
+</script>
+<body>
+ <div class="tm">
+ 	<img src="images/a.jpg" class="pic"/>
+    <p class="tag">撞色蝴蝶结系列 单肩斜挎</p>
+    <p class="price">￥269</p>
+ </div>
+ 
+  <div class="tm">
+ 	<img src="images/b.jpg" class="pic"/>
+    <p class="tag">刺绣花朵系列 单肩斜挎包</p>
+    <p class="price">￥189</p>
+ </div>
+ 
+  <div class="tm">
+ 	<img src="images/c.jpg" class="pic"/>
+    <p class="tag">闪电猫系列 单肩斜挎包</p>
+    <p class="price">￥319</p>
+ </div>
+ 
+  <div class="tm">
+ 	<img src="images/d.jpg" class="pic"/>
+    <p class="tag">潇洒小姐系列双肩单肩多</p>
+    <p class="price">￥229</p>
+ </div>
+ 
+  <div class="tm">
+ 	<img src="images/e.jpg" class="pic"/>
+    <p class="tag">复古方包系列 单肩斜挎包</p>
+    <p class="price">￥459</p>
+ </div>
+ 
+ 
+ <div style="clear:both;">
+ </div>
+ 
+ 
+   <div class="tm">
+ 	<img src="images/f.jpg" class="pic"/>
+    <p class="tag">金属花朵系列 单肩斜挎包</p>
+    <p class="price">￥199</p>
+  </div>
+  
+    <div class="tm">
+ 	<img src="images/g.jpg" class="pic"/>
+    <p class="tag">撞色蝴蝶结系列 手提单肩</p>
+    <p class="price">￥119</p>
+  </div>
+  
+    <div class="tm">
+ 	<img src="images/h.jpg" class="pic"/>
+    <p class="tag">荔枝纹合成革系列 手提单肩</p>
+    <p class="price">￥339</p>
+    </div>
+    
+      <div class="tm">
+ 	<img src="images/i.jpg" class="pic"/>
+    <p class="tag">玩味水桶系列 列单肩斜挎包</p>
+    <p class="price">￥169</p>
+  </div>
+  
+    <div class="tm">
+ 	<img src="images/j.jpg" class="pic"/>
+    <p class="tag">迷你包系列 手提单肩斜挎包</p>
+    <p class="price">￥289</p>
+  </div>
+</body>
+</html>
